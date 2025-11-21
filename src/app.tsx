@@ -20,10 +20,7 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* Main wrapper with shared background */}
-      <div
-        className="relative z-0 bg-black bg-cover bg-no-repeat bg-center"
-        style={{ backgroundImage: "url('/assets/background-image.jpg')" }} // 🔹 change path if needed
-      >
+      <div className="relative z-0 bg-black bg-cover bg-no-repeat bg-center">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar hide={hide} />
           <Hero />
