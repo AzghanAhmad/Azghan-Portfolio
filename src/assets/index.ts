@@ -15,7 +15,7 @@ import datacollide from "./Experience/datacollide.png";
 import navttc from "./Experience/navttc.jpeg";
 
 // === Languages ===
-import java from "./tech/java.png";
+import java from "./tech/Java.png";
 import javascript from "./tech/javascript.png";
 import typescript from "./tech/typescript.png";
 import python from "./tech/python.png";
