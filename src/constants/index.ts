@@ -6,7 +6,7 @@ import {
   backend,
   creator,
   web,
-  java,
+  jaava,
   javascript,
   typescript,
   reactnative,
@@ -78,7 +78,7 @@ export const TECHNOLOGIES = [
   // === Languages ===
   { name: "JavaScript", icon: javascript },
   { name: "TypeScript", icon: typescript },
-  { name: "Java", icon: java },
+  { name: "Java", icon: jaava },
   { name: "Python", icon: python },
   { name: "C#", icon: csharp },
   { name: "SQL", icon: sql },
