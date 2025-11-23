@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { TECHNOLOGIES } from "../constants";
+import { TECHNOLOGIES, SOFT_SKILLS } from "../constants";
 import { textVariant } from "../utils/motion";
 
 const techGroups = [
@@ -66,7 +66,9 @@ export const Tech = () => {
           production-grade solutions.
         </motion.p>
 
-        {/* ---------- 3-D Balls per Section ---------- */}
+        
+
+        {/* ---------- Technical Skills Section (without 3D Balls) ---------- */}
         <div className="mt-16 space-y-16">
           {techGroups.map((group, gIdx) => (
             <motion.div
@@ -81,21 +83,26 @@ export const Tech = () => {
                 {group.title}
               </h3>
 
-              {/* Balls */}
+              {/* Icons (without 3D balls) */}
               <div className="flex flex-row flex-wrap justify-center gap-10 md:gap-12">
                 {group.items.map((tech, idx) => (
                   <motion.div
                     key={tech.name}
-                    className="w-24 h-24 md:w-28 md:h-28 cursor-pointer"
-                    /* ---- NO ZOOM ---- */
-                    whileHover={{ scale: 1 }}   // keep original size
+                    className="w-24 h-24 md:w-28 md:h-28 cursor-pointer flex flex-col items-center"
+                    whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
                     viewport={{ once: true }}
                   >
-                    <BallCanvas icon={tech.icon|| "/fallback-icon.png"} />
+                    <div className="w-full h-full flex items-center justify-center bg-black-200 rounded-full p-4">
+                      <img
+                        src={tech.icon || "/fallback-icon.png"}
+                        alt={tech.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <p className="text-center text-gray-400 text-xs mt-2 font-medium">
                       {tech.name}
                     </p>
@@ -105,6 +112,38 @@ export const Tech = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* ---------- Soft Skills Section (with 3D Balls) ---------- */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-white text-2xl font-bold mb-8 text-center md:text-left border-l-4 border-green-500 pl-4">
+            Soft Skills
+          </h3>
+          <div className="flex flex-row flex-wrap justify-center gap-10 md:gap-12">
+            {SOFT_SKILLS.map((skill, idx) => (
+              <motion.div
+                key={skill.name}
+                className="w-24 h-24 md:w-28 md:h-28 cursor-pointer"
+                whileHover={{ scale: 1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <BallCanvas icon={skill.icon || "/fallback-icon.png"} />
+                <p className="text-center text-gray-400 text-xs mt-2 font-medium">
+                  {skill.name}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
       </>
     </SectionWrapper>

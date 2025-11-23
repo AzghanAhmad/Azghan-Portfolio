@@ -53,6 +53,12 @@ import graphql from "./tech/graphql.png";
 import kubernetes from "./tech/kubernetes.png";
 import micro from "./tech/microservices.png"; // Microservices icon
 
+// === Soft Skills === (using placeholder icons - you can replace these later)
+import leadership from "./tech/leadership.png"; 
+import timeManagement from "./tech/time-management.png"; 
+import problemSolving from "./tech/problem-solving.png"; 
+import communication from "./tech/communication.png";
+
 import fast from "./Academics/fast.png";
 import abhc from "./Academics/abhc.jpeg";
 
@@ -115,6 +121,10 @@ export {
   reactnative,
   tailwind,
   typescript,
+  leadership,
+  timeManagement,
+  problemSolving,
+  communication,
   fast,
   abhc,
   project1,

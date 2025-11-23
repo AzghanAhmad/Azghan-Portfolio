@@ -44,6 +44,10 @@ import {
   instagram,
   github,
   micro,
+  leadership,
+  timeManagement,
+  problemSolving,
+  communication,
   fast,
   abhc,
   cert1,
@@ -112,6 +116,14 @@ export const TECHNOLOGIES = [
   // === Advanced Concepts ===
   { name: "Microservices", icon: micro },
   { name: "GraphQL", icon: graphql },
+] as const;
+
+// Soft Skills
+export const SOFT_SKILLS = [
+  { name: "Leadership", icon: leadership },
+  { name: "Time Management", icon: timeManagement },
+  { name: "Problem Solving", icon: problemSolving },
+  { name: "Communication", icon: communication },
 ] as const;
 
 // ✅ Academic Journey (replaces EXPERIENCES)
